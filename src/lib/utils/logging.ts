@@ -1,6 +1,7 @@
-import { TEST } from './config';
+import { TEST } from "@lib/config/envConfig";
 
-const colours = {
+
+const colors = {
     reset: '\x1b[0m',
     bright: '\x1b[1m',
     dim: '\x1b[2m',
@@ -54,19 +55,19 @@ export function getCallingFunction(error: Error) {
 }
 
 export function log(message?: any, ...optionalParams: any[]) {
-    if (!TEST) console.log(`[${new Date().toLocaleString()}]`, colours.fg.magenta, '[SERVER-LOG] ', colours.reset, message, ...optionalParams);
+    if (!TEST) console.log(`[${new Date().toLocaleString()}]`, colors.fg.magenta, '[SERVER-LOG] ', colors.reset, message, ...optionalParams);
 }
 
 export function info(message?: any, ...optionalParams: any[]) {
     if (!TEST)
         console.info(
             `[${new Date().toLocaleString()}]`,
-            colours.fg.cyan,
+            colors.fg.cyan,
             '[INFO]',
-            colours.reset,
-            colours.bg.green,
+            colors.reset,
+            colors.bg.green,
             `[${getCallingFunction(new Error())}]`,
-            colours.reset,
+            colors.reset,
             message,
             ...optionalParams
         );
@@ -76,12 +77,12 @@ export function warn(message?: any, ...optionalParams: any[]) {
     if (!TEST)
         console.warn(
             `[${new Date().toLocaleString()}]`,
-            colours.fg.yellow,
+            colors.fg.yellow,
             '[WARN]',
-            colours.reset,
-            colours.bg.green,
+            colors.reset,
+            colors.bg.green,
             `[${getCallingFunction(new Error())}]`,
-            colours.reset,
+            colors.reset,
             message,
             ...optionalParams
         );
@@ -91,12 +92,12 @@ export function error(message?: any, ...optionalParams: any[]) {
     if (!TEST)
         console.error(
             `[${new Date().toLocaleString()}]`,
-            colours.fg.red,
+            colors.fg.red,
             '[ERROR]',
-            colours.reset,
-            colours.bg.green,
+            colors.reset,
+            colors.bg.green,
             `[${getCallingFunction(new Error())}]`,
-            colours.reset,
+            colors.reset,
             message,
             ...optionalParams
         );
