@@ -5,6 +5,16 @@
         "experimentalDecorators": true,
         "esModuleInterop": true,
         "outDir": "build",
+        "rootDirs": ["./src", "./test"],
+        "baseUrl": "./src",
+        "paths": {
+            "@lib/*": ["lib/*"],
+            "@routers/*": ["routers/*"],
+            "@models/*": ["models/*"],
+            "@controllers/*": ["controllers/*"],
+            "@middleware/*": ["middleware/*"]
+        },
+        "sourceMap": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "skipLibCheck": true,
